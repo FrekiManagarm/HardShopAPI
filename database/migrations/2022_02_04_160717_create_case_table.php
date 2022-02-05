@@ -13,9 +13,19 @@ class CreateCaseTable extends Migration
      */
     public function up()
     {
-        Schema::create('case', function (Blueprint $table) {
-            $table->id();
+        Schema::create('boitiers', function (Blueprint $table) {
+            $table->unsignedBigInteger('id')->autoIncrement();
+            $table->string('image')->nullable()->default(NULL);
+            $table->boolean('RGB');
+            $table->boolean('alim_inclus');
+            $table->string('couleur');
+            $table->string('description', 600)->nullable()->default(NULL);
+            $table->string('facade_laterale');
+            $table->string('format');
+            $table->string('nom');
+            $table->boolean("ventilateur");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
