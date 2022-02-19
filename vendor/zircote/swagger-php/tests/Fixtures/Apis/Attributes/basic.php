@@ -15,6 +15,9 @@ use OpenApi\Tests\Fixtures\Attributes as OAF;
     attachables: [new OAT\Attachable()]
 )]
 #[OAT\License(name: 'MIT', identifier: 'MIT')]
+#[OAT\Server(url: 'https://localhost/api', description: 'API server')]
+#[OAT\Tag(name: 'products', description: 'All about products')]
+#[OAT\Tag(name: 'catalog', description: 'Catalog API')]
 class OpenApiSpec
 {
 
@@ -50,12 +53,10 @@ class Product implements ProductInterface
     public $id;
 
     public function __construct(
-        #[OAT\Property()]
-        public int $quantity,
-        #[OAT\Property()]
-        public string $brand,
-        #[OAT\Property()]
-        public Colour $colour,
+        #[OAT\Property()] public int $quantity,
+        #[OAT\Property()] public string $brand,
+        #[OAT\Property()] public Colour $colour,
+        #[OAT\Property(type: 'string')] public \DateTimeInterface $releasedAt,
     )
     {
     }
@@ -97,7 +98,7 @@ class ProductController
     {
     }
 
-    #[OAT\Get(path: '/products', tags: ['products'], operationId: 'getAll')]
+    #[OAT\Get(path: '/products', tags: ['products', 'catalog'], operationId: 'getAll')]
     #[OAT\Response(
         response: 200,
         description: 'successful operation',

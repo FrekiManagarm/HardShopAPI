@@ -9,10 +9,19 @@ namespace OpenApi\Examples\UsingInterfaces;
  */
 
 /**
- *
  * @OA\Info(
- *   version="1.0.0",
- *   title="Example of using interfaces in swagger-php"
+ *     version="1.0.0",
+ *     title="Example of using interfaces in swagger-php",
+ *     description="Using interfaces",
+ *     @OA\Contact(name="Swagger API Team")
+ * )
+ * @OA\Server(
+ *     url="https://example.localhost",
+ *     description="API server"
+ * )
+ * @OA\Tag(
+ *     name="api",
+ *     description="API operations"
  * )
  */
 class OpenApiSpec

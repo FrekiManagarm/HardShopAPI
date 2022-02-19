@@ -5,14 +5,13 @@ namespace OpenApi\Examples\UsingInterfaces;
 /**
  * @OA\Schema(title="Pet")
  */
-class Pet implements ColorInterface
+class GreenProduct extends Product implements ColorInterface
 {
-
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getColor()
     {
-        return "green";
+        return 'green';
     }
 }

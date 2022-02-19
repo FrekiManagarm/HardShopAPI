@@ -16,6 +16,9 @@ use OpenApi\Attributes as OAT;
  *   @OA\License(name="MIT", identifier="MIT")
  * )
  */
+#[OAT\Tag(name: 'products', description: 'All about products')]
+#[OAT\Tag(name: 'catalog', description: 'Catalog API')]
+#[OAT\Server(url: 'https://localhost/api', description: 'API server')]
 class OpenApiSpec
 {
 
@@ -56,6 +59,9 @@ class Product implements ProductInterface
      * @OA\Property(format="int64", example=1, @OA\Attachable())
      */
     public $id;
+
+    #[OAT\Property(type: 'string')]
+    public \DateTimeInterface $releasedAt;
 
     #[OAT\Property()]
     public int $quantity;
@@ -116,7 +122,7 @@ class ProductController
     {
     }
 
-    #[OAT\Get(path: '/products', tags: ['products'], operationId: 'getAll')]
+    #[OAT\Get(path: '/products', tags: ['products', 'catalog'], operationId: 'getAll')]
     #[OAT\Response(
         response: 200,
         description: 'successful operation',

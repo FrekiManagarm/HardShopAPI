@@ -1,16 +1,13 @@
 <?php
 
-/**
- *
- */
 class PetWithDocsController
 {
-
     /**
      * @OA\Post(
      *     path="/pets",
      *     operationId="addPet",
      *     description="Creates a new pet in the store.  Duplicates are allowed",
+     *     tags={"store"},
      *     @OA\RequestBody(
      *         description="Pet to add to the store",
      *         required=true,
@@ -37,6 +34,7 @@ class PetWithDocsController
      *     path="/pets/{id}",
      *     description="Returns a user based on a single ID, if the user does not have access to the pet",
      *     operationId="findPetById",
+     *     tags={"store"},
      *     @OA\Parameter(
      *         description="ID of pet to fetch",
      *         in="path",
@@ -86,6 +84,7 @@ class PetWithDocsController
      *     path="/pets",
      *     description="Returns all pets from the system that the user has access to",
      *     operationId="findPets",
+     *     tags={"store"},
      *     @OA\Parameter(
      *         name="tags",
      *         in="query",
@@ -168,6 +167,7 @@ class PetWithDocsController
      *     path="/pets/{id}",
      *     description="deletes a single pet based on the ID supplied",
      *     operationId="deletePet",
+     *     tags={"store"},
      *     @OA\Parameter(
      *         description="ID of pet to delete",
      *         in="path",

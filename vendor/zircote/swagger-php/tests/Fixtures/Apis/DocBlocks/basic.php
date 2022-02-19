@@ -14,6 +14,18 @@ use OpenApi\Annotations as OA;
  *   title="Basic single file API",
  *   @OA\License(name="MIT", identifier="MIT", @OA\Attachable())
  * )
+ * @OA\Server(
+ *   url="https://localhost/api",
+ *   description="API server"
+ * )
+ * @OA\Tag(
+ *   name="products",
+ *   description="All about products"
+ * )
+ * @OA\Tag(
+ *   name="catalog",
+ *   description="Catalog API"
+ * )
  */
 class OpenApiSpec
 {
@@ -75,6 +87,14 @@ class Product implements ProductInterface
      */
     public $id;
 
+    public function __construct(
+        /**
+         * @OA\Property(type="string")
+         */
+        public \DateTimeInterface $releasedAt,
+    )
+    {
+    }
 }
 
 class ProductController
@@ -140,7 +160,7 @@ class ProductController
 
     /**
      * @OA\Get(
-     *   tags={"products"},
+     *   tags={"products", "catalog"},
      *   path="/products",
      *   operationId="getAll",
      *   @OA\Response(
