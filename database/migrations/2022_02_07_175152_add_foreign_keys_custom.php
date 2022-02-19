@@ -20,7 +20,7 @@ class AddForeignKeysCustom extends Migration
             $table->foreign('motherboard_id')->references('id')->on('MotherBoards');
             $table->foreign('psu_id')->references('id')->on('PSUs');
             $table->foreign('gpu_id')->references('id')->on('GPUs');
-            $table->foreign('hdd_id')->references('id')->on('HDDs');
+            $table->foreign('hdd_id')->references('id')->on('hdd');
             $table->foreign('ssd_id')->references('id')->on('SSDs');
             $table->foreign('cooling_id')->references('id')->on('Coolings');
         });
