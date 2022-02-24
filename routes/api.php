@@ -14,6 +14,52 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Auth
+
+// Case
+Route::get('');
+
+// Config
+
+// Cooling
+
+// CPU
+
+// GPU
+
+// HDD
+
+// MotherBoard
+
+// PSU
+
+// RAM
+
+// SSD
+
+Route::middleware(['middleware' => 'auth:api', 'cors'], function () {
+
+    // Auth
+    Route::post('/logout');
+
+    // Case
+
+    // Config
+
+    // Cooling
+
+    // CPU
+
+    // GPU
+
+    // HDD
+
+    // MotherBoard
+
+    // PSU
+
+    // RAM
+
+    // SSD
+
 });

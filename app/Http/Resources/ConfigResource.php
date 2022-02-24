@@ -14,6 +14,18 @@ class ConfigResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'user' => new UserResource($this->whenLoaded('user')),
+            'cpu' => new CPUResource($this->whenLoaded('cpu')),
+            'cooling' => new CoolingResource($this->whenLoaded('cooling')),
+            'case' => new CaseResource($this->whenLoaded('case')),
+            'gpu' => new GPUResource($this->whenLoaded('gpu')),
+            'hdd' => new HDDResource($this->whenLoaded('hdd')),
+            'motherboard' => new MotherBoardResource($this->whenLoaded('motherboard')),
+            'ssd' => new SSDResource($this->whenLoaded('ssd')),
+            'ram' => new RAMResource($this->whenLoaded('ram')),
+            'case' => new CaseResource($this->whenLoaded('boitier')),
+        ];
     }
 }

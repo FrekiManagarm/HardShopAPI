@@ -5,20 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RAM extends Model
+class HDD extends Model
 {
     use HasFactory;
 
-    protected $table = "RAMs";
+    protected $table = "hdd";
 
     protected $fillable = [
         'image',
+        'RPM',
         'capacité',
+        'format',
         'interface',
-        'latence',
         'description',
+        'marque',
+        'mémoire_cache',
         'nom',
-        'quantité'
+        'transfert',
     ];
 
     public function configs() {

@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class RAMResource extends JsonResource
+class UserResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,13 +16,11 @@ class RAMResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'image' => $this->image,
-            'capacité' => $this->capacité,
-            'interface' => $this->interface,
-            'latence' => $this->latence,
-            'description' => $this->description,
-            'nom' => $this->nom,
-            'quantité' => $this->quantité
+            'firstname' => $this->firstname,
+            'lastname' => $this->lastname,
+            'email' => $this->email,
+            'is_Admin' => $this->is_Admin,
+            'avatar_url' => $this->avatar_url,
         ];
     }
 }
