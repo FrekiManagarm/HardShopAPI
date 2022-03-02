@@ -9,13 +9,19 @@ class SSDPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Create a new policy instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+    public function viewAny() {
+        return true;
+    }
+
+    public function store() {
+        return true;
+    }
+
+    public function update() {
+        return true;
+    }
+
+    public function destroy() {
+        return true;
     }
 }
