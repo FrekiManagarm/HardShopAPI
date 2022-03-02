@@ -11,8 +11,8 @@ namespace OpenApi\Examples\SwaggerSpec\Petstore;
  *     ),
  *     @OA\Server(
  *         description="Api server",
- *         url="petstore.swagger.io",
- *     ),
+ *         url="petstore.swagger.io"
+ *     )
  * )
  */
 class OpenApiSpec

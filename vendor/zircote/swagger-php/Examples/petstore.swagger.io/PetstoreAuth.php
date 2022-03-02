@@ -9,12 +9,6 @@ namespace OpenApi\Examples\PetstoreSwaggerIo;
  *     in="header",
  *     name="api_key"
  * )
- */
-class ApiAuth
-{
-}
-
-/**
  * @OA\SecurityScheme(
  *     securityScheme="petstore_auth",
  *     type="oauth2",

@@ -1,9 +1,11 @@
 <?php
 
+namespace OpenApi\Examples\SwaggerSpec\PetstoreWithExternalDocs\Models;
+
 /**
  * @OA\Schema(required={"code", "message"})
  */
-class ErrorModel extends Exception
+class ErrorModel extends \Exception
 {
     /**
      * @OA\Property(format="int32");

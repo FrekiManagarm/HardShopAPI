@@ -26,7 +26,7 @@ class MotherBoardController extends Controller
     }
 
     public function update(MotherBoard $mb, MotherBoardUpdateRequest $request) {
-        $mother = MotherBoard::where('motherboard.id', $mb->id);
+        $mother = MotherBoard::where('MotherBoards.id', $mb->id);
 
         $mother->update($request->all());
 

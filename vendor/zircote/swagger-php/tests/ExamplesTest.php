@@ -85,6 +85,12 @@ class ExamplesTest extends OpenApiTestCase
                 'polymorphism.yaml',
                 [],
             ],
+            'polymorphism-3.1.0' => [
+                OpenApi::VERSION_3_1_0,
+                'polymorphism',
+                'polymorphism-3.1.0.yaml',
+                [],
+            ],
             'using-interfaces' => [
                 OpenApi::VERSION_3_0_0,
                 'using-interfaces',
@@ -141,6 +147,7 @@ class ExamplesTest extends OpenApiTestCase
         // register autoloader for examples that require autoloading due to inheritance, etc.
         $path = $this->example($example);
         $exampleNS = str_replace(' ', '', ucwords(str_replace(['-', '.'], ' ', $example)));
+        $exampleNS = str_replace(' ', '\\', ucwords(str_replace('/', ' ', $exampleNS)));
         $classloader = new ClassLoader();
         $classloader->addPsr4('OpenApi\\Examples\\' . $exampleNS . '\\', $path);
         $classloader->register();

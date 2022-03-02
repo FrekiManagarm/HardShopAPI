@@ -14,28 +14,30 @@ class AuthController extends Controller
     public function login(Request $request) {
 
         if (Auth::guard('web')->attempt(['email' => request('email'), 'password' => request('password')])) {
-            $userAuth = Auth::guard('web')->user();
 
-            $token = $userAuth->createToken('Laravel Password Grant Client')->accessToken;
+            $token = auth()->user()->createToken('API Token')->accessToken;
 
-            $response = ['token' => $token, 'user' => new UserResource($userAuth)];
-            return response($response, 200);
+            return response()->json([
+                'user' => new UserResource(auth()->user()),
+                'token' => $token,
+                'message' => 'login succesfully',
+            ]);
         } else {
             $response = ['message' => 'Wrong email or password'];
-            return response($response, 422);
+            return response()->json($response, 422);
         }
     }
 
     public function register(UserStoreRequest $request) {
         $validated = $request->validated();
-        $validated['password'] = Hash::make($validated['password']);
+        $validated['password'] = bcrypt($validated['password']);
         $validated['firstname'] = ucfirst($validated['firstname']);
         $validated['lastname'] = ucfirst($validated['lastname']);
 
         $user = User::create($validated);
 
-        $token = $user->createToken('Laravel Password Grant Client')->accessToken;
-        $response = ['user' => new UserResource($user), 'token' => $token];
+        $token = $user->createToken('API Token')->accessToken;
+        $response = ['user' => new UserResource($user), 'token' => $token->token];
 
         return response($response, 201);
     }

@@ -4,6 +4,8 @@
  * @license Apache 2.0
  */
 
+namespace OpenApi\Examples\Petstore30;
+
 /**
  * @OA\Info(
  *     description="This is a sample Petstore server.  You can find

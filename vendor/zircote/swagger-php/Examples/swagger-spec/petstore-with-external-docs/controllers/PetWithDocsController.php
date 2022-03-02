@@ -1,5 +1,7 @@
 <?php
 
+namespace OpenApi\Examples\SwaggerSpec\PetstoreWithExternalDocs\Controllers;
+
 class PetWithDocsController
 {
     /**

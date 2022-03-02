@@ -26,7 +26,7 @@ class CoolingController extends Controller
     }
 
     public function update(Cooling $cool, CoolingUpdateRequest $request) {
-        $cooling = Cooling::where('cooling.id', $cool->id);
+        $cooling = Cooling::where('Coolings.id', $cool->id);
 
         $cooling->update($request->all());
 

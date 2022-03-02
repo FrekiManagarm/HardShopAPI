@@ -1,5 +1,7 @@
 <?php
 
+namespace OpenApi\Examples\SwaggerSpec\PetstoreWithExternalDocs;
+
 /**
  * @OA\Info(
  *     title="Swagger Petstore",

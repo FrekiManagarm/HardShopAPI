@@ -33,6 +33,20 @@ class OpenApiSpec
 }
 
 /**
+ * @OA\Server(
+ *     url="https://example.localhost",
+ *     description="The local environment."
+ * )
+ * @OA\Server(
+ *     url="https://example.com",
+ *     description="The production server."
+ * )
+ */
+class Server
+{
+}
+
+/**
  * @OA\Schema()
  */
 enum Colour
@@ -121,7 +135,7 @@ class ProductController
      *               format="int32"
      *           )
      *       ),
-     *       @OA\JsonContent(ref="#/components/schemas/Product")
+     *       @OA\MediaType(mediaType="application/json", @OA\Schema(ref="#/components/schemas/Product"))
      *   ),
      *   @OA\Response(
      *       response=401,
@@ -147,9 +161,12 @@ class ProductController
      *     @OA\RequestBody(
      *         description="New product",
      *         required=true,
-     *         @OA\JsonContent(
-     *             type="array",
-     *             @OA\Items(ref="#/components/schemas/Product")
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 type="array",
+     *                 @OA\Items(ref="#/components/schemas/Product")
+     *             )
      *         )
      *     )
      * )

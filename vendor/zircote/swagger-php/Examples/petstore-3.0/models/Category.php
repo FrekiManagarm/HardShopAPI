@@ -4,12 +4,10 @@
  * @license Apache 2.0
  */
 
-namespace Petstore30;
+namespace OpenApi\Examples\Petstore30\Models;
 
 /**
  * Pets Category.
- *
- * @package Petstore30
  *
  * @author  Donii Sergii <doniysa@gmail.com>
  *

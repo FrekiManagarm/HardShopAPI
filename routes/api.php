@@ -69,7 +69,7 @@ Route::get('/RAM/{id}', [RAMController::class, 'show']);
 Route::get('/SSDs', [SSDController::class, 'index']);
 Route::get('/SSD/{id}', [SSDController::class, 'show']);
 
-Route::middleware(['middleware' => 'auth:api', 'cors'], function () {
+Route::middleware(['middleware' => 'auth:api'], function () {
 
     // Auth
     Route::post('/logout');
@@ -95,33 +95,33 @@ Route::middleware(['middleware' => 'auth:api', 'cors'], function () {
     Route::delete('/CPU/{id}', [CPUController::class, 'destroy']);
 
     // GPU
-    Route::post('/GPU', [GPUController::class, 'store']);
-    Route::patch('/GPU/{id}', [GPUController::class, 'update']);
-    Route::delete('/GPU/{id}', [GPUController::class, 'destroy']);
+    Route::post('/GPU', 'GPUController@store');
+    Route::patch('/GPU/{id}', 'GPUController@update');
+    Route::delete('/GPU/{id}', 'GPUController@destroy');
 
     // HDD
-    Route::post('/HDD', [HDDController::class, 'store']);
-    Route::patch('/HDD/{id}', [HDDController::class, 'update']);
-    Route::delete('/HDD/{id}', [HDDController::class, 'destroy']);
+    Route::post('/HDD', 'HDDController@store');
+    Route::patch('/HDD/{id}', 'HDDController@update');
+    Route::delete('/HDD/{id}', 'HDDController@destroy');
 
     // MotherBoard
-    Route::post('/MotherBoard', [MotherBoardController::class, 'store']);
-    Route::patch('/MotherBoard/{id}', [MotherBoardController::class, 'update']);
-    Route::delete('/MotherBoard/{id}', [MotherBoardController::class, 'destroy']);
+    Route::post('/MotherBoard', 'MotherBoardController@store');
+    Route::patch('/MotherBoard/{id}', 'MotherBoardController@update');
+    Route::delete('/MotherBoard/{id}', 'MotherBoardController@destroy');
 
     // PSU
-    Route::post('/PSU', [PSUController::class, 'store']);
-    Route::patch('/PSU/{id}', [PSUController::class, 'update']);
-    Route::delete('/PSU/{id}', [PSUController::class, 'destroy']);
+    Route::post('/PSU', 'PSUController@store');
+    Route::patch('/PSU/{id}', 'PSUController@update');
+    Route::delete('/PSU/{id}', 'PSUController@destroy');
 
     // RAM
-    Route::post('/RAM', [RAMController::class, 'store']);
-    Route::patch('/RAM/{id}', [RAMController::class, 'update']);
-    Route::delete('/RAM/{id}', [RAMController::class, 'destroy']);
+    Route::post('/RAM', 'RAMController@store');
+    Route::patch('/RAM/{id}', 'RAMController@update');
+    Route::delete('/RAM/{id}', 'RAMController@destroy');
 
     // SSD
-    Route::post('/SSD', [SSDController::class, 'store']);
-    Route::patch('/SSD/{id}', [SSDController::class, 'update']);
-    Route::delete('/SSD/{id}', [SSDController::class, 'destroy']);
+    Route::post('/SSD', 'SSDController@store');
+    Route::patch('/SSD/{id}', 'SSDController@update');
+    Route::delete('/SSD/{id}', 'SSDController@destroy');
 
 });

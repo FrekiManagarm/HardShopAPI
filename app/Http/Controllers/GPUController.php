@@ -26,7 +26,7 @@ class GPUController extends Controller
     }
 
     public function update(GPU $gpu, GPUUpdateRequest $request) {
-        $graf = GPU::where('gpu.id', $gpu->id);
+        $graf = GPU::where('GPUs.id', $gpu->id);
 
         $graf->update($request->all());
 

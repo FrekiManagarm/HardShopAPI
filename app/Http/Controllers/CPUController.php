@@ -26,7 +26,7 @@ class CPUController extends Controller
     }
 
     public function update(CPU $cpu, CPUUpdateRequest $request) {
-        $proc = CPU::where('cpu.id', $cpu->id);
+        $proc = CPU::where('CPUs.id', $cpu->id);
 
         $proc->update($request->all());
 

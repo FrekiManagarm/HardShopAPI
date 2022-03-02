@@ -1,6 +1,6 @@
 <?php
 
-namespace OpenApi\Examples\PetstoreSwaggerIo;
+namespace OpenApi\Examples\PetstoreSwaggerIo\Models;
 
 /**
  * @OA\Schema(@OA\Xml(name="Order"))

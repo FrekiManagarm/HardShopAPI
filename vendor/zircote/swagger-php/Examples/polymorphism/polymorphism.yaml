@@ -62,7 +62,7 @@ components:
           properties:
             property3:
               type: string
-              nullable: false
+              nullable: true
     Request:
       properties:
         payload:

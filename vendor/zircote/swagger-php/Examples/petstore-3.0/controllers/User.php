@@ -4,12 +4,10 @@
  * @license Apache 2.0
  */
 
-namespace Petstore30\controllers;
+namespace OpenApi\Examples\Petstore30\Controllers;
 
 /**
  * Class User.
- *
- * @package Petstore30\controllers
  *
  * @author  Donii Sergii <doniysa@gmail.com>
  */

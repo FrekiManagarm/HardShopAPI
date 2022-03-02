@@ -17,7 +17,7 @@ class CaseController extends Controller
 
     public function show($id) {
 
-        $case = Boitier::where('boitier.id', $id)->first()->get();
+        $case = Boitier::where('boitiers.id', $id)->first()->get();
 
         return (new CaseResource($case))->response()->setStatusCode(200);
     }
@@ -32,7 +32,7 @@ class CaseController extends Controller
 
     public function update(Boitier $case, CaseUpdateRequest $request) {
 
-        $boitier = Boitier::where('boitier.id', $case->id);
+        $boitier = Boitier::where('boitiers.id', $case->id);
 
         $boitier->update($request->all());
 

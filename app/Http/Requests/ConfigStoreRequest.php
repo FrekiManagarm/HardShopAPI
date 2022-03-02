@@ -13,7 +13,7 @@ class ConfigStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class ConfigStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'required|integer',
+            'cpu_id' => 'required|integer',
+            'ram_id' => 'required|integer',
+            'motherboard_id' => 'required|integer',
+            'psu_id' => 'required|integer',
+            'gpu_id' => 'required|integer',
+            'hdd_id' => 'required|integer',
+            'ssd_id' => 'required|integer',
+            'cooling_id' => 'required|integer',
+            'case_id' => 'required|integer' 
         ];
     }
 }

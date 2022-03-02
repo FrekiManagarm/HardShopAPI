@@ -4,12 +4,10 @@
  * @license Apache 2.0
  */
 
-namespace Petstore30;
+namespace OpenApi\Examples\Petstore30\Models;
 
 /**
  * Class Pet.
- *
- * @package Petstore30
  *
  * @author  Donii Sergii <doniysa@gmail.com>
  *
@@ -41,7 +39,7 @@ class Pet
      *     title="Category",
      * )
      *
-     * @var \Petstore30\Category
+     * @var Category
      */
     private $category;
 
@@ -84,7 +82,7 @@ class Pet
      *     ),
      * )
      *
-     * @var \Petstore30\Tag[]
+     * @var Tag[]
      */
     private $tags;
 }

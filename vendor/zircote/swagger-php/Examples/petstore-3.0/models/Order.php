@@ -4,14 +4,13 @@
  * @license Apache 2.0
  */
 
-namespace Petstore30;
+namespace OpenApi\Examples\Petstore30\Models;
 
 /**
  * Class Order.
  *
- * @package Petstore30
- *
  * @author  Donii Sergii <doniysa@gmail.com>
+ *
  * @OA\Schema(
  *     title="Order model",
  *     description="Order model",
